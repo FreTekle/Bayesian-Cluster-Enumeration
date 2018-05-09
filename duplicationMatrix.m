@@ -9,7 +9,7 @@
 %
 % [2] F. K. Teklehaymanot, M. Muma, and A. M. Zoubir, "Novel Bayesian Cluster
 %     Enumeration Criterion for Cluster Analysis With Finite Sample Penalty Term", 
-%     IEEE International conference on Acoustics, Speech and Signal Processing (ICASSP) (accepted), 
+%     in Proc. 43rd IEEE Int. conf. on Acoustics, Speech and Signal Process. (ICASSP), pp. 4274-4278, 2018, 
 %     [Online-Edition: https://www.researchgate.net/publication/322918028]
 
 

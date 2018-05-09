@@ -2,16 +2,16 @@
 
 % For details, see: 
 %
-% [1] G. Schwarz, "Estimating the Dimension of a Model", The Annals of
-%     Statistics, Vol. 6, No.2, pp. 461-464, 1978.
+% [1] G. Schwarz, "Estimating the Dimension of a Model", Ann. Stat., 
+%     vol. 6, no.2, pp. 461-464, 1978.
 %
 % [2] J. E. Cavanaugh and A. A. Neath, "Generalizing The Derivation Of The
-%     Schwarz Information Criterion", Communications in Statistics - Theory and
-%     Methods, Vol. 28, No. 1, pp. 49-66, 1999.
+%     Schwarz Information Criterion", Commun. Statist.-Theory Meth., 
+%     vol. 28, no. 1, pp. 49-66, 1999.
 %
 % [3] F. K. Teklehaymanot, M. Muma, and A. M. Zoubir, "A Novel
 %     Bayesian Cluster Enumeration Criterion for Unsupervised Learning",
-%     IEEE Transactions in signal processing (under review),
+%     IEEE Trans. signal process. (under review),
 %     [Online-Edition: https://arxiv.org/abs/1710.07954v2], 2018.
 
 % Copyright (c) 2018 Freweyni K. Teklehaymanot. All rights reserved.

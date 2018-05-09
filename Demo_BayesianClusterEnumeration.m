@@ -4,12 +4,12 @@
 %
 % [1] F. K. Teklehaymanot, M. Muma, and A. M. Zoubir, "A Novel 
 %     Bayesian Cluster Enumeration Criterion for Unsupervised Learning",
-%     IEEE Transactions in signal processing (under review),
+%     IEEE Trans. signal process. (under review),
 %     [Online-Edition: https://arxiv.org/abs/1710.07954v2], 2018.
 %
 % [2] F. K. Teklehaymanot, M. Muma, and A. M. Zoubir, "Novel Bayesian Cluster
 %     Enumeration Criterion for Cluster Analysis With Finite Sample Penalty Term", 
-%     IEEE International conference on Acoustics, Speech and Signal Processing (ICASSP) (accepted), 
+%     in Proc. 43rd IEEE Int. conf. on Acoustics, Speech and Signal Process. (ICASSP), pp. 4274-4278, 2018, 
 %     [Online-Edition: https://www.researchgate.net/publication/322918028]
 
 
@@ -52,13 +52,14 @@ for mc = 1:MC
     %% Calculate the penalty term of the Bayesian cluster enumeration criteria
     for l = 1:length(spec_num_clusters)
     
-        [est_centroids, est_covmats, est_prob] = modelBasedClustering(data, num_features, num_samples_total, spec_num_clusters(l)); % cluster the data set into the specified number of clusters using the EM algorithm
+        [cluster_memberships_kmeans, est_centroids_Kmeans] = kmeans(data', spec_num_clusters(l), 'MaxIter', 10, 'Replicates', 5); % initialize the centroid estimates using K-means++  
+        [est_centroids_EM, est_covmats_EM, est_prob] = modelBasedClustering(data, num_features, num_samples_total, spec_num_clusters(l), est_centroids_Kmeans', cluster_memberships_kmeans); % cluster the data set into spec_num_clusters(l) clusters using the EM algorithm
         [~, est_num_samples_cluster] = hardClusterMemberships(est_prob, spec_num_clusters(l)); % perform hard clustering, see [1] for details
         dup_mat = duplicationMatrix(num_features); % compute the duplication matrix of the covariance matrix
 
-        [~, penalty_BIC_NF{l}(mc), ~] = BIC_NF(num_features, est_num_samples_cluster, est_covmats, dup_mat);
-        [~, penalty_BIC_N{l}(mc), ~] = BIC_N(num_features, est_num_samples_cluster, est_covmats);
-        [~, penalty_BIC_O{l}(mc), ~] = BIC_O(num_features, num_samples_total, est_num_samples_cluster, est_covmats);
+        [~, penalty_BIC_NF{l}(mc), ~] = BIC_NF(num_features, est_num_samples_cluster, est_covmats_EM, dup_mat);
+        [~, penalty_BIC_N{l}(mc), ~] = BIC_N(num_features, est_num_samples_cluster, est_covmats_EM);
+        [~, penalty_BIC_O{l}(mc), ~] = BIC_O(num_features, num_samples_total, est_num_samples_cluster, est_covmats_EM);
 
     end
     
@@ -78,13 +79,14 @@ for l = 1:length(spec_num_clusters)
 end
 
 %% PLot results
-figure('Name','Penalty term of different Bayesian cluster enumeration criterion') 
+figure('Name','Penalty term of different Bayesian cluster enumeration criteria') 
 plot(spec_num_clusters, -penalty_NF, 'Color', 'r', 'LineWidth', 2)
 hold on
 plot(spec_num_clusters, -penalty_N, 'Color', 'b', 'Marker', 'diamond', 'LineWidth', 2)
 plot(spec_num_clusters, -penalty_O, 'Color', 'k', 'LineStyle', '--', 'LineWidth', 2)
+xlim([spec_num_clusters(1) spec_num_clusters(end)])
 xlabel('Number of clusters specified by the candidate models')
 ylabel('Penalty term')
 legend('BIC_{NF}', 'BIC_N', 'BIC_O', 'Location', 'northwest')
-set(gca,'FontSize', 13)
+set(gca,'FontSize', 14, 'FontName', 'Times')
 hold off

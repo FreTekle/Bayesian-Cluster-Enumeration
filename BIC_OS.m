@@ -4,11 +4,11 @@
 %
 % [1] D. Pelleg and A. Moore, "X-means: extending K-means with efficient
 %     estimation of the number of clusters," in Proc. 17th Int. Conf. Mach.
-%  Learn. (ICML), 2000, pp. 727-734.
+%     Learn. (ICML), pp. 727-734, 2000.
 %
 % [2] F. K. Teklehaymanot, M. Muma, and A. M. Zoubir, "A Novel
 %     Bayesian Cluster Enumeration Criterion for Unsupervised Learning",
-%     IEEE Transactions in signal processing (under review),
+%     IEEE Trans. signal process. (under review),
 %     [Online-Edition: https://arxiv.org/abs/1710.07954v2], 2018.
 
 % Copyright (c) 2018 Freweyni K. Teklehaymanot. All rights reserved.
