@@ -3,7 +3,7 @@
 % For details, see: 
 %
 % [1] F. K. Teklehaymanot, M. Muma, and A. M. Zoubir, "Bayesian Cluster Enumeration Criterion for Unsupervised Learning",
-%     IEEE Trans. signal process. (accepted),
+%     IEEE Trans. Signal Process. (accepted),
 %     [Online-Edition: https://arxiv.org/abs/1710.07954v2], 2018.
 %
 % [2] F. K. Teklehaymanot, M. Muma, and A. M. Zoubir, "Novel Bayesian Cluster
