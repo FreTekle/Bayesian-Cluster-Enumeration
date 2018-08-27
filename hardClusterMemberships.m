@@ -4,7 +4,7 @@
 % See Algorithm 1 in [1] for details:
 % [1] F. K. Teklehaymanot, M. Muma, and A. M. Zoubir, "A Novel
 %     Bayesian Cluster Enumeration Criterion for Unsupervised Learning",
-%     IEEE Trans. signal process. (under review),
+%     IEEE Trans. Signal Process. (accepted),
 %     [Online-Edition: https://arxiv.org/abs/1710.07954v2], 2018.
 
 % Copyright (c) 2018 Freweyni K. Teklehaymanot. All rights reserved.
